@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import firebase from 'firebase/compat/app';
-import { initializeApp } from 'firebase/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 
@@ -21,15 +20,15 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'select-account' });
+provider.setCustomParameters({ prompt: 'select_account' });
 
-export const signInWithGoogle = () => auth.signInEithPopUp(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
