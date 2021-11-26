@@ -12,7 +12,6 @@ import { signOutStart } from '../../redux/user/user.actions';
 import './header.styles.scss';
 
 const Header = ({ currentUser, hidden, signOutStart }) => {
-   console.log(currentUser);
    return (
       <div className='header'>
          <Link className='logo-container' to='/'>
@@ -25,7 +24,6 @@ const Header = ({ currentUser, hidden, signOutStart }) => {
             <Link className='option' to='/contact'>
                CONTACT
             </Link>
-            {console.log(currentUser)}
             {currentUser ? (
                <div className='option' onClick={signOutStart}>
                   SIGN OUT
